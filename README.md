@@ -8,3 +8,9 @@ The dataset can be downloaded from Kaggle (https://www.kaggle.com/datasets/olist
 The dataset is divided into 9 csv files, the structure of which is shown in the following image: 
 
 ![image-20220615112558634](C:\Users\jakob\AppData\Roaming\Typora\typora-user-images\image-20220615112558634.png)
+
+
+
+### Structure
+
+I will first focus 
