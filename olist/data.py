@@ -29,6 +29,31 @@ def get_data():
     return data
 
 
+def data_cleaning(data):
+    """
+    Takes the data dictionary as input and cleans data
+    (removes duplicates, drops missing values, )
+    """
+
+    # filter for delivered orders
+    data["orders"] = data["orders"][data["orders"].order_status == "delivered"]
+
+     # cleaning each dataframe individually
+    for file in data.keys():
+        df = data[file]
+         #drop duplicates
+        df.drop_duplicates(inplace = True)
+
+         #Missing values
+        if file in ["orders", "products"]:
+            df.dropna(inplace = True)
+
+         # reasign df to data
+        data[file] = df
+
+    return data
+
 if __name__=="__main__":
     data= get_data()
-    print(data.keys())
+    data = data_cleaning(data)
+    print(data["orders"].isna().sum())
