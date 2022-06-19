@@ -27,17 +27,12 @@ The next step will be to check for factors that influence customer satisfaction 
 
 ### Business implications
 
-Starting from the results of our data analysis I will think of ways to increase Olist's income. Therefore I will assume that Olist gets a fixed fee from each seller for each month listed on Olist (listing fee) and a percentage share of each sold item (10 % of item price).
 
-On the cost side, I will assume that Olist's IT costs increase with the square root of order volume. As a starting point, I will assume that the overall IT costs in the period observed were 1 Mil. BRL.
-
-The question to be answered is whether an increase in customer satisfaction can increase Olist's income. Therefore I will make assumptions about the economical costs of a bad review.
 
 
 
 
 
 ### Further ideas for later implementation
-
 - sales prediction
 - text analysis to check for reasons for bad reviews
