@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import re
 
 def get_data():
     """ Reads in all csv files from the folder "data" and
@@ -34,7 +35,6 @@ def data_cleaning_general(data):
     Takes the data dictionary as input and cleans data
     (removes duplicates, drops missing values)
     """
-
     # filter for delivered orders
     data["orders"] = data["orders"][data["orders"].order_status == "delivered"]
 
@@ -53,7 +53,31 @@ def data_cleaning_general(data):
 
     return data
 
+def transform_datetime():
+    """"
+    Transform all datetime columns into a datetime object
+    """
+    time_cols = {}
+    temp_list =  []
+    # loop through all datasets
+    for key in data.keys():
 
+        # loop through all columns
+        for col in data[key].columns:
+            # check for column names with "time" or "date"
+            match = re.search("(time)|(date)", col)
+            if match:
+                temp_list.append(col)
+
+        if temp_list != []:
+            time_cols[key] = temp_list
+        temp_list=[]
+
+    # apply pd.to_datetime to all identified datetime columns
+    for key in time_cols.keys():
+        data[key][time_cols[key]] = data[key][time_cols[key]].apply(pd.to_datetime)
+
+    return data
 
 if __name__=="__main__":
     data= get_data()
