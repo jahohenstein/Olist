@@ -53,7 +53,7 @@ def data_cleaning_general(data):
 
     return data
 
-def transform_datetime():
+def transform_datetime(data):
     """"
     Transform all datetime columns into a datetime object
     """
