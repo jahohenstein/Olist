@@ -29,10 +29,10 @@ def get_data():
     return data
 
 
-def data_cleaning(data):
+def data_cleaning_general(data):
     """
     Takes the data dictionary as input and cleans data
-    (removes duplicates, drops missing values, )
+    (removes duplicates, drops missing values)
     """
 
     # filter for delivered orders
@@ -53,7 +53,9 @@ def data_cleaning(data):
 
     return data
 
+
+
 if __name__=="__main__":
     data= get_data()
-    data = data_cleaning(data)
+    data = data_cleaning_general(data)
     print(data["orders"].isna().sum())
