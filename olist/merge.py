@@ -28,6 +28,7 @@ def orders_order_reviews(data):
     # merge orders and order_reviews
     orders_order_reviews = orders.merge(order_reviews, how = "inner", on = "order_id")
 
-
     # drop orders with no reviews
     orders_order_reviews.dropna(subset=["review_id"], inplace=True)
+
+    return orders_order_reviews
