@@ -56,6 +56,7 @@ def data_cleaning_general(data):
 def transform_datetime(data):
     """"
     Transform all datetime columns into a datetime object
+    Input: Data Dictionary with table names as keys
     """
     time_cols = {}
     temp_list =  []
